@@ -1,103 +1,78 @@
 # 🛒 Olist Marketplace SQL Analytics
 
-A comprehensive SQL analytics project that explores transactional data from the Olist Brazilian e-commerce marketplace to deliver clear, reliable business insights across revenue performance, operational efficiency, and customer behavior.
+A structured SQL analytics project built on real transactional data from the **Olist Brazilian e-commerce marketplace**, designed to extract **reliable, decision-ready insights** across revenue performance, operational efficiency, cancellations, and customer behavior.
 
-The project focuses on accurate metric design, well-structured SQL logic, and decision-ready KPIs, transforming raw marketplace data into insights that can support real business analysis and reporting.
-
----
-
-## 📌 Project Overview
-
-Marketplace leadership teams need reliable answers to questions like:
-- How is revenue actually growing over time?
-- How efficient is order fulfillment from purchase to delivery?
-- How often do customers return — and how long does it take?
-- When and why do cancellations happen?
-
-This project converts raw marketplace data into **trusted metrics** that can be confidently used for **business decisions, dashboards, and executive reporting**.
+This project focuses on **accurate metric definition**, **production-grade SQL logic**, and **clear business interpretation**, transforming raw marketplace data into insights that support reporting, performance tracking, and strategic decision-making.
 
 ---
 
-## 🎯 Business Questions Answered
+## 🔍 What This Project Covers
 
-✔ Monthly delivered orders, GMV, and AOV (gap-free time series)  
-✔ Average end-to-end order fulfillment time  
-✔ Cancellation rates based on **decision timing**, not naive purchase dates  
-✔ True customer retention using **real customer identity**  
-✔ Average time between first and second purchase  
+### 📈 Revenue & Growth Analysis  
+Track how **delivered orders**, **GMV**, and **average order value (AOV)** evolve over time using clean, gap-free monthly metrics.
 
-Each metric is built with **explicit assumptions** and **validated logic**.
+### 🚚 Operational Performance  
+Measure real fulfillment efficiency by analyzing **order cycle times** from purchase to customer delivery.
 
----
+### ❌ Cancellation Analysis  
+Identify when cancellations occur using **decision-month logic**, ensuring accurate attribution and trustworthy cancellation rates.
 
-## 📊 Dataset
-
-**Source:** Public Olist Brazilian E-Commerce Dataset  
-**Coverage:** 2016-09 to 2018-10  
-
-### Core Tables Used
-- `orders`
-- `order_items`
-- `customers`
-- `sellers`
-- `products`
-
-### Key Design Choice
-Customer analysis is performed using **`customer_unique_id`** (true customer identity),  
-not `customer_id` (session-level identifier).
-
-This avoids **fake retention inflation** — a common analytical mistake.
+### 👥 Customer Behavior  
+Analyze true customer retention using **stable customer identity**, including **repeat customer rate** and **time to second purchase**.
 
 ---
 
-## 🧠 Analytical Approach
+## 🧠 Analytical Philosophy
 
-### 1️⃣ Data Validation
-- Verified dataset date range
-- Audited order status distribution
-- Confirmed true customer counts
-
-### 2️⃣ Revenue & Sales KPIs
-- Monthly delivered orders
-- Delivered GMV (no double counting)
-- AOV with NULL-safe calculations
-- Calendar-based logic to avoid missing months
-
-### 3️⃣ Operations & Fulfillment
-- Average order cycle time (purchase → delivery)
-- Delivery efficiency measurement using completed orders only
-
-### 4️⃣ Cancellation Analysis
-- Cancellation rates calculated using **decision month**
-- Delivered orders grouped by delivery month
-- Canceled orders grouped by purchase month
-- Prevents misleading cancellation spikes
-
-### 5️⃣ Customer Behavior
-- Repeat customer rate using real customer identity
-- Time-to-second-purchase using window functions
-- Retention metrics aligned with business reality
+- Business-correct definitions over surface-level counts  
+- Metrics designed to reflect **realized business value**, not system artifacts  
+- Explicit handling of edge cases (NULLs, duplicates, timing mismatches)  
+- SQL written for **clarity, correctness, and scalability**
 
 ---
 
-## 📈 Key Insights (Summary)
+## 📦 Dataset
 
-- **Customer retention is low (~3%)**, typical of transactional marketplaces
-- **Average fulfillment time ≈ 12.5 days**, consistent with logistics-heavy e-commerce
-- **Cancellations remain under ~1.5%** after early platform stabilization
-- Most repeat purchases occur **2–3 months after the first order**
-- Revenue growth accelerates significantly from mid-2017 onward
+- **Source:** Public Olist Brazilian e-commerce dataset (Brazil)
+- **Core Tables Used:**  
+  - `orders`  
+  - `order_items`  
+  - `customers`  
+  - `sellers`  
+  - `products`
 
-These insights are **directionally reliable**, not over-fit or exaggerated.
+Customer-level analysis is performed using **`customer_unique_id`** to represent true customer identity rather than session-level IDs.
 
 ---
 
-## 🛠 Tools & Tech Stack
+## 🛠 Tools & Environment
 
-- **SQL (SQLite-compatible)**
-- Window Functions
-- CTEs (WITH clauses)
-- Date & time arithmetic
-- Business-safe aggregations
+- SQL (SQLite-compatible)
+- Relational data modeling
+- Time-series aggregation
+- Window functions for customer lifecycle analysis
 
+---
 
+## 📊 Key Metrics Produced
+
+- Monthly delivered orders  
+- Monthly GMV and AOV  
+- Average order cycle time  
+- Monthly cancellation rate (decision-based)  
+- Repeat customer rate  
+- Average time to second purchase
+
+---
+
+## ⚠️ Assumptions & Limitations
+
+- Analysis is limited to delivered and canceled orders where relevant timestamps are available  
+- Revenue is calculated using item prices (shipping excluded)  
+- Results reflect historical data and do not imply future performance
+
+---
+
+## 📌 Summary
+
+This repository demonstrates how raw marketplace data can be transformed into **trustworthy business metrics** using disciplined SQL design, thoughtful aggregation, and careful handling of real-world data issues.
