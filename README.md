@@ -26,7 +26,7 @@ A rigorous, reproducible SQL analysis of the **Olist Brazilian E-Commerce** data
 
 ## 📊 The Headline Insight
 
-![Delivery speed vs customer satisfaction](delivery_vs_satisfaction.png)
+<img width="1407" height="730" alt="delivery_vs_satisfaction" src="https://github.com/user-attachments/assets/65e853bc-c93c-4865-a07c-aa54c0abbaae" />
 
 > Orders delivered in **≤3 days average 4.48★** with just 6.6% negative reviews. Once delivery crosses **30 days**, the average rating falls to **2.25★** and **63% of reviews turn negative.** The relationship is clean and monotonic across every bucket — delivery time is not *a* factor in satisfaction, it is *the* factor.
 
@@ -43,7 +43,7 @@ A rigorous, reproducible SQL analysis of the **Olist Brazilian E-Commerce** data
 
 ## 📈 Business Context
 
-![Monthly merchandise GMV](monthly_gmv.png)
+<img width="1330" height="610" alt="monthly_gmv" src="https://github.com/user-attachments/assets/ad7f2622-552f-475a-a8be-aa8379e41668" />
 
 The marketplace scaled from a near-standing start in late 2016 to roughly **R$1M in monthly merchandise GMV** through 2018, on a stable **~R$135 average order value.** Total delivered merchandise GMV across the window: **R$13.2M** (R$15.4M including freight).
 
