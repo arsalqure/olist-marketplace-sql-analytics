@@ -1,10 +1,10 @@
 # 🛒 Olist E-Commerce — SQL Analytics
 
-> **What drives revenue, retention, and customer satisfaction across 100K orders on Brazil's largest marketplace dataset — answered in SQL, validated to the cent.**
+> **What drives revenue, retention, and customer satisfaction across ~99K orders on Brazil's largest marketplace dataset — answered in SQL, validated to the cent.**
 
 ![SQL](https://img.shields.io/badge/SQL-Advanced-1f6feb?style=flat-square)
 ![Engine](https://img.shields.io/badge/Engine-SQLite%20%2F%20MySQL%208-003b57?style=flat-square)
-![Dataset](https://img.shields.io/badge/Dataset-Olist%20(100K%20orders)-ff6b35?style=flat-square)
+![Dataset](https://img.shields.io/badge/Dataset-Olist%20(99K%20orders)-ff6b35?style=flat-square)
 ![Window Functions](https://img.shields.io/badge/Window%20Functions-%E2%9C%94-16a34a?style=flat-square)
 ![Reconciled](https://img.shields.io/badge/Revenue%20reconciled-within%200.02%25-16a34a?style=flat-square)
 
@@ -17,7 +17,7 @@ A rigorous, reproducible SQL analysis of the **Olist Brazilian E-Commerce** data
 | # | Finding | The number |
 |---|---------|-----------|
 | 1 | **Delivery speed is the #1 satisfaction lever.** Late orders don't just annoy — they collapse ratings. | 4.48★ → **2.25★** as delivery slips past 30 days; negative reviews jump **6.6% → 63%** |
-| 2 | **Retention — not acquisition — is the growth ceiling.** The business acquires well but barely re-engages. | Only **3.0%** of customers ever place a second order |
+| 2 | **Retention — not acquisition — is the growth ceiling.** The business acquires well but barely re-engages. | Only **3.0%** of delivered-order customers ever place a second order |
 | 3 | **Revenue is geographically concentrated.** Logistics investment has an obvious target. | **São Paulo = 38%** of GMV; top 3 states = **63%** |
 | 4 | **The revenue model is financially sound.** Item-level GMV ties out to actual customer payments. | Reconciles within **0.02%** (R$2,688 of R$15.4M) |
 | 5 | **Brazil runs on credit installments.** Payment design matters for this market. | Credit card = **78%** of payment value, avg **3.5** installments |
@@ -45,7 +45,7 @@ A rigorous, reproducible SQL analysis of the **Olist Brazilian E-Commerce** data
 
 <img width="1330" height="610" alt="monthly_gmv" src="https://github.com/user-attachments/assets/ad7f2622-552f-475a-a8be-aa8379e41668" />
 
-The marketplace scaled from a near-standing start in late 2016 to roughly **R$1M in monthly merchandise GMV** through 2018, on a stable **~R$135 average order value.** Total delivered merchandise GMV across the window: **R$13.2M** (R$15.4M including freight).
+The marketplace scaled from a near-standing start in late 2016 to roughly **R$1M in monthly merchandise GMV** through 2018, on a stable **~R$137 average order value.** Total delivered merchandise GMV across the window: **R$13.2M** (R$15.4M including freight).
 
 | Metric | Value |
 |---|---|
